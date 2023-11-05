@@ -50,9 +50,6 @@ function init(){
     const controls = new OrbitControls(camera, canvas);
 
     window.addEventListener('resize', resizediv, false)
-    window.addEventListener('keydown', keydown, false);
-    window.addEventListener('keyup', keyup, false);
-
     function resizediv(){
         camera.aspect = div.offsetWidth / div.offsetHeight;
         camera.updateProjectionMatrix();
