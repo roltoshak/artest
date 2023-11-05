@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import * as dataj from './model/new_json.json' assert {type: 'json'};
+import * as dataj from 'https://github.com/roltoshak/artest/blob/main/model/new_json.json' assert {type: 'json'};
 
 function init(){
     const data = dataj.default;
