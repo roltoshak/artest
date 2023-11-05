@@ -24,7 +24,7 @@ function init(){
     renderer.shadowMap.enabled = true;
 
     const plane = new THREE.Mesh(new THREE.PlaneGeometry(30, 30), new THREE.MeshStandardMaterial({color: 0xf0f0f0, wireframe: false, side: THREE.DoubleSide}))
-    plane.position.y = 0;
+    plane.position.y = -0.5;
     plane.rotation.x = -0.5 * Math.PI;
     scene.add(plane);
     plane.receiveShadow = true;
@@ -60,44 +60,8 @@ function init(){
         renderer.render(scene, camera);
     }
 
-    let mX = 0, mY = 0, mZ = 0;
-
-    function keydown(key){
-        console.log(key);
-        switch (key.keyCode){
-            case 83: //S
-                mX = 0.01;
-                break;
-            case 87: //W
-                mX = -0.01;
-                break;
-            case 65: //A
-                mY = 0.01;
-                break;
-            case 68: //D
-                mY = -0.01;
-                break;
-            case 81: //Q
-                mZ = 0.01;
-                break;
-            case 69: //E
-                mZ = -0.01;
-                break;
-        }
-    }
-
-    function keyup(key){
-        console.log(key);
-        if (key.keyCode == 87 || key.keyCode == 83) mX = 0;
-        else if (key.keyCode == 65 || key.keyCode == 68) mY = 0;
-        else if (key.keyCode == 81 || key.keyCode == 69) mZ =0;
-    }
-
     function animate() {
         requestAnimationFrame(animate);
-        // model.rotation.x += mX;
-        // model.rotation.y += mY;
-        // model.rotation.z += mZ;
         controls.update();
         renderer.render(scene, camera);
     }
