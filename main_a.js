@@ -26,7 +26,7 @@ function init(){
     const plane = new THREE.Mesh(new THREE.PlaneGeometry(30, 30), new THREE.MeshStandardMaterial({color: 0xf0f0f0, wireframe: false, side: THREE.DoubleSide}))
     plane.position.y = 0;
     plane.rotation.x = -0.5 * Math.PI;
-    
+    scene.add(plane);
     plane.receiveShadow = true;
 
     const loader = new GLTFLoader();
